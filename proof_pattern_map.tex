@@ -1,0 +1,43 @@
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{array, booktabs, amsmath, amssymb, xcolor}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{document}
+
+\title{Logical Inner--Form Pattern Map\\\large Cheat--Sheet for Choosing Proof Techniques}
+\author{}
+\date{}
+\maketitle
+
+Strip off the quantifiers first, then match the logical ``shape'' of the remaining statement to a row below.  
+The \textbf{preferred tactic} is usually the shortest route; if it stalls, switch to one of the alternatives in the
+``Why'' column.
+
+\begin{longtable}{C{0.6cm} L{2.8cm} L{3.2cm} L{3cm} L{4.5cm}}
+\toprule
+\# & Canonical Inner Form & Typical Surface Wording & Preferred Proof Tactic & Why It's Natural \\ \midrule
+1 & $R(x)$ & Plain predicate (\emph{e.g.} ``$x$ is prime'') & Direct algebra / definition chase & No logical connectors to rearrange -- just verify the property. \\ \midrule
+2 & $P(x)\;\Rightarrow\;Q(x)$ & ``If $x$ \dots\ then \dots'' & Direct \textbf{or} Contrapositive & Choose the side (assume $P$ vs.\ assume $\lnot Q$) whose algebra is simpler. \\ \midrule
+3 & $P(x)\;\Leftrightarrow\;Q(x)$ & ``\dots iff \dots'' & Prove each direction as an implication & Each half may need a different trick. \\ \midrule
+4 & $P(x)\;\Rightarrow\;[Q(x)\lor R(x)]$ & ``then $Q$ \emph{or} $R$'' & Contrapositive & Negating the conclusion gives $\lnot Q\land\lnot R$, which is usually simpler than an inclusive OR. \\ \midrule
+5 & $[P(x)\land Q(x)]\;\Rightarrow\;R(x)$ & ``$P$ \emph{and} $Q$ then $R$'' & Direct & You already have two facts to leverage. \\ \midrule
+6 & $P(x)\;\Rightarrow\;[Q(x)\land R(x)]$ & ``then both $Q$ \emph{and} $R$'' & Direct (prove each part) & Must establish two conclusions explicitly. \\ \midrule
+7 & $\forall x\;\exists y\;P(x,y)$ & ``For every $x$ there exists $y$ such that \dots'' & Construction & Reader expects a formula or algorithm that produces $y$ from $x$. \\ \midrule
+8 & $\exists x\;P(x)$ & ``There exists $x$ such that \dots'' & Construction \emph{or} non--constructive (pigeonhole, contradiction) & One explicit example suffices; if hard, argue existence indirectly. \\ \midrule
+9 & $\forall n\ge n_{0}\;P(n)$ where $P$ references $n-1$, $n-2$, \dots & Recursive/iterative integer claims & Mathematical induction (ordinary or strong) & The truth ``propagates'' along $n$. \\ \midrule
+10 & Parity / Rationality / Divisibility patterns & even/odd, rational/irrational, divisible by $k$ & Contrapositive \emph{or} contradiction & Negations have compact algebraic forms (\emph{e.g.} ``not even'' $= 2k{+}1$). \\ \midrule
+11 & Piecewise or absolute--value conditions & $|x|<1$, $\max$, $\min$ & Proof by cases & The definition itself already splits the domain. \\ \midrule
+12 & Counting identity $A(n)=B(n)$ & Binomial identities, combinatorial sums & Combinatorial (double--count) proof & Count the same set two different ways to avoid messy algebra. \\ \bottomrule
+\end{longtable}
+
+\bigskip
+\noindent
+\textbf{Tip:} When unsure, scribble one minute of scratch work using both the direct and contrapositive options; the cleaner path usually reveals itself quickly.
+
+\end{document}
