@@ -1,0 +1,77 @@
+
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*}
+\newcommand{\dd}{\, \mathrm{d}}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries Derivative Formulas}
+\end{center}
+\vspace{0.5cm}
+
+% ------------------------------------------------------------------
+\section*{Basic Derivative Formulas}
+\begin{itemize}
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(x^n\bigr) = n x^{n-1}$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(\sqrt{x}\bigr) = \frac{1}{2\sqrt{x}}$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(x^{-1}\bigr) = -\frac{1}{x^{2}}$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(f(x)\,g(x)\bigr) = f'(x)\,g(x) + f(x)\,g'(x)$
+    \item $\displaystyle \frac{\dd}{\dd x}\left( \frac{f(x)}{g(x)} \right) = \frac{f'(x)\,g(x) - f(x)\,g'(x)}{g^{2}(x)}$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(f(g(x))\bigr) = f'\bigl(g(x)\bigr)\, g'(x)$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(f(g(h(x)))\bigr) = f'\bigl(g(h(x))\bigr)\, g'\bigl(h(x)\bigr)\, h'(x)$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(\sqrt{\,f(x)}\bigr) = \frac{1}{2\sqrt{\,f(x)}}\, f'(x)$
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section*{Derivatives of Trigonometric Functions}
+\begin{itemize}
+    \item $\displaystyle \frac{\dd}{\dd x}(\sin x) = \cos x$
+    \item $\displaystyle \frac{\dd}{\dd x}(\cos x) = -\sin x$
+    \item $\displaystyle \frac{\dd}{\dd x}(\tan x) = \sec^{2}x$
+    \item $\displaystyle \frac{\dd}{\dd x}(\cot x) = -\csc^{2}x$
+    \item $\displaystyle \frac{\dd}{\dd x}(\sec x) = \sec x\, \tan x$
+    \item $\displaystyle \frac{\dd}{\dd x}(\csc x) = -\csc x\, \cot x$
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section*{Derivatives of Inverse Trigonometric Functions}
+\begin{itemize}
+    \item $\displaystyle \frac{\dd}{\dd x}(\sin^{-1}x) = \frac{1}{\sqrt{1 - x^{2}}}$
+    \item $\displaystyle \frac{\dd}{\dd x}(\cos^{-1}x) = -\frac{1}{\sqrt{1 - x^{2}}}$
+    \item $\displaystyle \frac{\dd}{\dd x}(\tan^{-1}x) = \frac{1}{1 + x^{2}}$
+    \item $\displaystyle \frac{\dd}{\dd x}(\cot^{-1}x) = -\frac{1}{1 + x^{2}}$
+    \item $\displaystyle \frac{\dd}{\dd x}(\sec^{-1}x) = \frac{1}{|x|\,\sqrt{x^{2} - 1}}$
+    \item $\displaystyle \frac{\dd}{\dd x}(\csc^{-1}x) = -\frac{1}{|x|\,\sqrt{x^{2} - 1}}$
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section*{Derivatives of Exponential and Logarithmic Functions}
+\begin{itemize}
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(e^{x}\bigr) = e^{x}$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(a^{x}\bigr) = a^{x} \ln a \quad (a \ne 1,\; a > 0)$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(e^{f(x)}\bigr) = e^{f(x)}\, f'(x)$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(a^{f(x)}\bigr) = a^{f(x)}\, f'(x)\, \ln a$
+    \item $\displaystyle \frac{\dd}{\dd x}(\ln x) = \frac{1}{x}$
+    \item $\displaystyle \frac{\dd}{\dd x}(\log_{a} x) = \frac{1}{x\,\ln a}$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(\ln f(x)\bigr) = \frac{1}{f(x)}\, f'(x)$
+    \item $\displaystyle \frac{\dd}{\dd x}\bigl(\log_{a} f(x)\bigr) = \frac{1}{f(x)}\, f'(x)\, \frac{1}{\ln a}$
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section*{Derivatives of Inverse Functions}
+\begin{itemize}
+    \item $\displaystyle \bigl(f^{-1}\bigr)'(x) = \frac{1}{f'\bigl(f^{-1}(x)\bigr)}$
+\end{itemize}
+
+% ------------------------------------------------------------------
+\section*{Derivatives of Hyperbolic Functions}
+\begin{itemize}
+    \item $\displaystyle \frac{\dd}{\dd x}(\sinh x) = \cosh x$
+    \item $\displaystyle \frac{\dd}{\dd x}(\cosh x) = \sinh x$
+\end{itemize}
+
+\end{document}
