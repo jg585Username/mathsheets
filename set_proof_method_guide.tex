@@ -1,0 +1,42 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array,booktabs,geometry}
+\geometry{margin=1in}
+\title{Choosing a Proof Method in Elementary Set Theory}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+The table below is a quick decision guide for common proof tasks in introductory set theory.
+
+\renewcommand{\arraystretch}{1.2}
+\small
+\begin{tabular}{@{}p{3.8cm} p{3cm} p{4.2cm} p{4.6cm}@{}}
+\toprule
+\textbf{What the statement looks like} & \textbf{Typical goal} & \textbf{First-choice proof style} & \textbf{Sketch of the move} \\
+\midrule
+$X = Y$ & Equality & \emph{Double containment} (element chasing) & Show $X\subseteq Y$ and $Y\subseteq X$ by picking arbitrary $x$. \\
+\addlinespace
+$X \subseteq Y$ & Inclusion & \emph{Direct element-wise} & Take $x\in X$; unpack definitions until $x\in Y$. \\
+\addlinespace
+Pure $\cup,\cap,\overline{\phantom{A}}$ identity & Simplify/equality & \emph{Algebra-of-sets manipulation} & Use commutative, distributive, De Morgan, absorption, etc. \\
+\addlinespace
+Lots of complements & Inclusion/equality & \emph{Element-wise with De Morgan} \newline or Boolean-algebra view & Translate $x\notin A$ type statements; or use $\land,\lor,\neg$ identities. \\
+\addlinespace
+“Or” in the conclusion & Inclusion & \emph{Cases} or \emph{Contrapositive} & Decide which branch; or turn $\cup$ into $\cap$ in the contrapositive. \\
+\addlinespace
+Counting finite sets & Cardinality equality & \emph{Counting / inclusion–exclusion} & Compute $|X|$ and $|Y|$ directly. \\
+\addlinespace
+Indexed family $\bigcup_{i}A_i$ & Inclusion & \emph{Element-wise with index witness} & Exhibit the index $i$ that works for the $x$. \\
+\addlinespace
+Power sets / injections & Structure level & \emph{Function construction} or Schröder–Bernstein & Build explicit map or injections in both directions. \\
+\addlinespace
+Property over $n$ & For all $n$ & \emph{Induction} & Base case + assume $k$ to prove $k+1$. \\
+\addlinespace
+Suspicious claim & Likely false & \emph{Counterexample} & Provide one element that breaks the statement. \\
+\bottomrule
+\end{tabular}
+
+\end{document}
