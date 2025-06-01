@@ -1,0 +1,74 @@
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array,booktabs,geometry}
+\setmainfont{Comic Sans MS}
+\geometry{margin=1in}
+\title{Core Definitions Road‑Map for Elementary Set Theory}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{How to Use}
+Keep this single‑page cheat‑sheet beside you; whenever a term appears, glance here for the formal definition and common notation.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\small
+\begin{tabular}{@{} p{3.1cm} p{9.4cm} @{}}
+\toprule
+\textbf{Category} & \textbf{Definition / Notation (relative to a universal set $U$)} \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Basic vocabulary}}\\
+Set, element & Unordered collection of objects.  $x\in A$ means ``$x$ is an element of $A$''.\\
+Empty set $\varnothing$ & Unique set with no elements.\\
+Universal set $U$ & Ambient ``everything under discussion''. Needed for complements.\\
+Subset / proper subset & $A\subseteq B \iff (\forall x)(x\in A\Rightarrow x\in B)$; \quad $A\subset B$ adds $A\neq B$.\\
+Set equality & $A=B \iff A\subseteq B$ and $B\subseteq A$.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Set operations}}\\
+Union & $A\cup B=\{x\mid x\in A\lor x\in B\}$.\\
+Intersection & $A\cap B=\{x\mid x\in A\land x\in B\}$.\\
+Difference & $A\setminus B=\{x\mid x\in A\land x\notin B\}$.\\
+Complement & $\overline{A}=U\setminus A$.\\
+Symmetric difference & $A\triangle B=(A\setminus B)\cup(B\setminus A)$.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Construction gadgets}}\\
+Power set & $\mathcal P(A)=\{X\mid X\subseteq A\}$.\\
+Cartesian product & $A\times B=\{(a,b)\mid a\in A,\;b\in B\}$. Extend to $A^n$.\\
+Ordered pair & $(a,b)=\{\{a\},\{a,b\}\}$ (Kuratowski)—order matters.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Counting \& size}}\\
+Finite/infinite & Finite $\iff$ bijection with $\{1,\ldots,n\}$ for some $n\in\mathbb N$.\\
+Cardinality & $|A|$ denotes ``number of elements''.\\
+Countable, uncountable & Countable = finite or bijective with $\mathbb N$; otherwise uncountable.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Functions \& relations}}\\
+Binary relation & $R\subseteq A\times B$. Write $aRb$ for $(a,b)\in R$.\\
+Function & Relation $f\subseteq A\times B$ with uniqueness: each $a\in A$ appears once.\\
+Domain/codomain & $\mathrm{dom}(f)=A$, codomain $=B$, range $=f(A)$.\\
+Injection/surjection/bijection & One‑to‑one / onto / both.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Higher‑order structures}}\\
+Equivalence relation & Reflexive, symmetric, transitive; induces partitions.\\
+Partition & Collection of non‑empty, pairwise‑disjoint subsets whose union is $A$.\\
+Partial order & Reflexive, antisymmetric, transitive relation.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Logical laws on sets}}\\
+De Morgan & $\overline{A\cup B}=\overline{A}\cap\overline{B}$ and vice‑versa.\\
+Absorption & $A\cup(A\cap B)=A$.  $A\cap(A\cup B)=A$.\\
+Distributive & $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$ and dual.\\
+Complement laws & $A\cup\overline{A}=U$, $A\cap\overline{A}=\varnothing$, $\overline{\overline{A}}=A$.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Choice \& infinity (advanced)}}\\
+Axiom of Choice (AC) & Every family of non‑empty sets has a choice function. Equivalent to Zorn's Lemma, Well‑Ordering Principle.\\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Notation essentials}}\\
+Set‑builder & $\{x\in S\mid P(x)\}$ means ``all $x$ in $S$ satisfying $P(x)$''.\\
+Logical symbols & $\forall,\exists,\neg,\land,\lor,\Rightarrow$ used inside predicates.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
