@@ -1,0 +1,251 @@
+
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Key Formulas in Engineering Costs}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Cost Behavior}
+
+\begin{align}
+  \text{Fixed Cost (FC)} &:\ \text{Costs that do not change with output.} \nonumber \\
+  \text{Variable Cost (VC)} &:\ \text{Costs that vary proportionally with output.} \nonumber \\
+  \text{Total Cost (TC)} &= FC + VC \label{eq:tc} \\
+  \text{Average Cost (AC)} &= \frac{TC}{x} \label{eq:ac} \\
+  \text{Marginal Cost (MC)} &= \frac{d\,VC}{d\,x} \label{eq:mc}
+\end{align}
+
+\noindent where \( x \) is the output (e.g., number of units produced).
+
+\section*{2. Break-Even Analysis}
+
+Suppose revenue and cost functions are:
+\[
+  R(x) = \rho \, x, 
+  \qquad
+  TC(x) = a_0 + b_0 \, x,
+\]
+where
+\begin{itemize}
+  \item \(\rho\) = unit selling price (\$/unit),
+  \item \(a_0\) = total fixed cost (\$),
+  \item \(b_0\) = variable cost per unit (\$/unit).
+\end{itemize}
+
+\noindent Profit (or net benefit) is:
+\begin{equation}
+  \Omega(x) \;=\; R(x) \;-\; TC(x) \;=\; \rho\,x \;-\; \bigl(a_0 + b_0\,x\bigr).
+\end{equation}
+
+\noindent Break-even output \( x^* \) occurs when \( \Omega(x^*) = 0 \):
+\begin{equation}
+  0 = \rho\,x^* \;-\; \bigl(a_0 + b_0\,x^*\bigr)
+  \quad\Longrightarrow\quad
+  x^* 
+  = \frac{a_0}{\,\rho - b_0\,}.
+  \label{eq:breakeven}
+\end{equation}
+
+\section*{3. Cost Indexes}
+
+To update a historical cost \( C_0 \) from year 0 to year 1 using an index:
+\begin{equation}
+  C_1 \;=\; C_0 \; \times \; \frac{\text{Index}_1}{\text{Index}_0}.
+  \label{eq:cost-index}
+\end{equation}
+
+\noindent Examples:
+\begin{itemize}
+  \item Operating \& Maintenance Cost Index (CPI\textsubscript{O\&M})
+  \item Plant Cost Composite Index (PCCI)
+\end{itemize}
+
+\section*{4. Power-Sizing Model (Economies of Scale)}
+
+If two pieces of equipment have known sizes and costs at the same time,
+\[
+  \frac{C_A}{C_B} 
+  = \left(\frac{S_A}{S_B}\right)^{\,y},
+\]
+where
+\begin{itemize}
+  \item \(C_A, C_B\) = capital costs of equipment A and B,
+  \item \(S_A, S_B\) = capacities (sizes) of equipment A and B,
+  \item \(y\) = size-exponent (typically \(0.6 \le y \le 1.0\)).  
+    \begin{itemize}
+      \item If \(y < 1\), there are \emph{economies of scale}.
+    \end{itemize}
+\end{itemize}
+Thus,
+\[
+  C_A 
+  = C_B \,\bigl(S_A / S_B\bigr)^{\,y}.
+\]
+
+\section*{5. Scaling and Inflation Example for a Coal Plant}
+
+\paragraph{Reference Data (Year 2010):}
+\begin{itemize}
+  \item Base plant (Project–B): 
+    \begin{itemize}
+      \item Size: \(400~\text{MW}\) 
+      \item Capital cost: \$3{,}636 \;/\text{kW} \(\Rightarrow\) \$1{,}454.4~\text{M} \)
+      \item Fixed O\&M: \$16.84~\text{M/year}
+      \item Variable O\&M: \$4.60~\text{\$/MWh}
+      \item PCCI\(_{2010}\)=100, PCCI\(_{2020}\)=172
+      \item CPI\(_{\text{O\&M},2010}\)=1.9, CPI\(_{\text{O\&M},2020}\)=2.2
+    \end{itemize}
+\end{itemize}
+
+\subsection*{5.1. Step 1: Scale from 400\,MW to 500\,MW at 2010 Prices}
+
+\begin{align}
+  \text{Capital cost (2010)}&: \nonumber\\
+  C_{\mathrm{cap},A}^{2010}
+  &= C_{\mathrm{cap},B}^{2010}
+    \left(\frac{500}{400}\right)^{1.0}
+  = 1{,}454.4~\text{M} \times \frac{500}{400}
+  = 1{,}818~\text{M}.
+  \label{eq:scale-cap} \\[1em]
+  \text{Fixed O\&M (2010)}&: \nonumber\\
+  \mathrm{FOM}_{A}^{2010}
+  &= \mathrm{FOM}_{B}^{2010}
+    \left(\frac{500}{400}\right)^{0.75}
+  \approx 16.84~\text{M} \times \left(\frac{500}{400}\right)^{0.75}
+  \approx 19.908~\text{M/year}.
+  \label{eq:scale-fom} \\[1em]
+  \text{Variable O\&M (2010)}&:
+  \quad u_{\mathrm{VOM},A}^{2010} = u_{\mathrm{VOM},B}^{2010} = 4.60~\$/\text{MWh}.
+  \label{eq:scale-vom}
+\end{align}
+
+\subsection*{5.2. Step 2: Inflate to 2020 Values}
+
+\begin{align}
+  \text{Capital cost (2020)}&: \nonumber\\
+  C_{\mathrm{cap},A}^{2020}
+  &= C_{\mathrm{cap},A}^{2010}
+    \times \frac{\text{PCCI}_{2020}}{\text{PCCI}_{2010}}
+  = 1{,}818~\text{M} \times \frac{172}{100}
+  = 3{,}126.96~\text{M}.
+  \label{eq:inf-cap} \\[1em]
+  \text{Fixed O\&M (2020)}&: \nonumber\\
+  \mathrm{FOM}_{A}^{2020}
+  &= \mathrm{FOM}_{A}^{2010}
+    \times \frac{\text{CPI}_{\text{O\&M},2020}}{\text{CPI}_{\text{O\&M},2010}}
+  = 19.908~\text{M} \times \frac{2.2}{1.9}
+  \approx 23.0512~\text{M/year}.
+  \label{eq:inf-fom} \\[1em]
+  \text{Variable O\&M (2020)}&: \nonumber\\
+  u_{\mathrm{VOM},A}^{2020}
+  &= u_{\mathrm{VOM},A}^{2010}
+    \times \frac{\text{CPI}_{\text{O\&M},2020}}{\text{CPI}_{\text{O\&M},2010}}
+  = 4.60 \times \frac{2.2}{1.9}
+  \approx 5.3263~\$/\text{MWh}.
+  \label{eq:inf-vom}
+\end{align}
+
+\subsection*{5.3. Step 3: Annual Cost and Revenue Functions (No Discounting)}
+
+Assume
+\begin{itemize}
+  \item Plant life \( N = 50 \) years,
+  \item Capacity factor \( = 0.70 \),
+  \item Plant size \( = 500~\text{MW} \).
+\end{itemize}
+
+\paragraph{Annualized Capital Recovery:}
+\[
+  \text{CapRec}_{A}
+  = \frac{C_{\mathrm{cap},A}^{2020}}{N}
+  = \frac{3{,}126.96~\text{M}}{50}
+  = 62.5392~\text{M/year}.
+  \label{eq:caprec}
+\]
+
+\paragraph{Total Annual Cost Function:}
+Let \( x = \) annual energy production (MWh). Then
+\[
+  x = 500~\text{MW} 
+      \times 24~\frac{\text{h}}{\text{day}} 
+      \times 365~\frac{\text{days}}{\text{year}}
+      \times 0.70
+  = 3.066 \times 10^{6}~\text{MWh/year}.
+  \label{eq:energy}
+\]
+Fixed costs per year:
+\[
+  \text{FixedAnnualCost} 
+  = \text{CapRec}_{A} + \mathrm{FOM}_{A}^{2020}
+  = 62.5392 + 23.0512
+  = 85.5904~\text{M/year}.
+  \label{eq:fixed-annual}
+\]
+Variable cost per MWh:
+\[
+  u_{\mathrm{VOM},A}^{2020} = 5.3263~\$/\text{MWh}.
+  \label{eq:var-cost}
+\]
+Therefore,
+\begin{equation}
+  TC_A(x) 
+  = \Bigl(85.5904\Bigr)\;+\;\Bigl(5.3263 \times 10^{-6}\Bigr)\;x
+  \quad\text{(in M\$ per year).}
+  \label{eq:annual-cost-func}
+\end{equation}
+
+\paragraph{Revenue Function:}
+If the selling price is \(\rho\) \$/MWh, then
+\begin{equation}
+  R_A(x) = \rho \, x \quad\text{(in \$ per year).}
+  \label{eq:annual-rev}
+\end{equation}
+
+\paragraph{Profit Function:}
+\begin{equation}
+  \Omega_A(x) 
+  = R_A(x) - TC_A(x)
+  = \rho\,x - \bigl[\,85.5904 + (5.3263 \times 10^{-6})\,x \bigr].
+  \label{eq:profit}
+\end{equation}
+
+\subsection*{Break-Even Price}
+
+At break-even, \(\Omega_A(x) = 0\). Using \(x = 3.066 \times 10^{6}\) MWh/year,
+\begin{align}
+  0 
+  &= \rho^* \times (3.066 \times 10^{6})
+    \;-\; \Bigl[\,85.5904 + (5.3263 \times 10^{-6})\,(3.066 \times 10^{6})\Bigr] 
+  \nonumber\\
+  \rho^* 
+  &= \frac{85.5904 + \bigl(5.3263 \times 10^{-6}\bigr)\,(3.066 \times 10^{6})}
+         {\,3.066 \times 10^{6}\times 10^{-6}\,} 
+  \label{eq:breakeven-price} \\
+  &\approx \frac{85.5904 + 16.3283}{3.066}
+  = \frac{101.9187}{3.066}
+  \approx 32.26~\$/\text{MWh}.
+  \nonumber
+\end{align}
+
+\section*{6. Additional Cost Concepts}
+
+\begin{itemize}
+  \item \textbf{Sunk Cost:} A past cash outlay that cannot be recovered; should be ignored in current decision making.
+  \end{itemize}
+\section*{7. Cost Estimation Models}
+
+\begin{enumerate}
+  \item \textbf{Per-Unit Model}: 
+    \[
+      \text{Cost} = \text{(Cost per Unit)} \times \text{Number of Units}.
+    \]
+\end{enumerate}
+
+\end{document}
